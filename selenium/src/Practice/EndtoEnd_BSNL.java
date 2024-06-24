@@ -64,8 +64,59 @@ public class EndtoEnd_BSNL {
 		String code = s.nextLine();
 		Thread.sleep(3000);
 		 
-	  driver.findElement(By.xpath("//div[@class='input-group']")).sendKeys(code);
+	  driver.findElement(By.xpath("//input[@id='captcha']")).sendKeys(code);
 	  Thread.sleep(3000);
+	  
+	  driver.findElement(By.xpath("//button[@id='create-btn']")).click();
+	  Thread.sleep(3000);
+	  
+	  Scanner o = new Scanner(System.in);
+		System.out.println("Enter OTP");
+		String otp = o.nextLine();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//input[@id='otp']")).sendKeys(otp);
+		  Thread.sleep(3000);
+		
+	  
+	  driver.findElement(By.xpath("//button[@id='reset-btn']")).click();
+	  Thread.sleep(3000);
+	  
+	  driver.close();
+	  Thread.sleep(3000);
+	  driver.switchTo().window(win1);
+	  Thread.sleep(3000);
+	  
+	  driver.findElement(By.xpath("//a[text()='My Account ']")).click();
+		Thread.sleep(3000);
+		
+		Set<String> w =driver.getWindowHandles();
+		Iterator<String> it1=w.iterator();
+		String w1=it1.next();
+		String w2=it1.next();
+		driver.switchTo().window(w2);
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//a[text()=' Sign in']")).click();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("9494009183");
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Sudheernani@12345");
+		Thread.sleep(3000);
+		
+		Scanner Ca = new Scanner(System.in);
+		System.out.println("Enter Captcha CODE");
+		String Captcha = Ca.nextLine();
+		Thread.sleep(3000);
+		 
+	  driver.findElement(By.xpath("//input[@id='captcha']")).sendKeys(Captcha);
+	  Thread.sleep(3000);
+	  
+	  driver.findElement(By.xpath("//button[@id='login-btn']")).click();
+	  Thread.sleep(3000);
+		
 		
 	}
 	public static void main(String[] args) throws InterruptedException, AWTException {
