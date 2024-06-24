@@ -52,11 +52,11 @@ public class EndtoEnd_BSNL {
 		 Select sel = new Select(C);
 		 sel.selectByVisibleText("Andhra Pradesh");
 		 Thread.sleep(3000);
-		
-		driver.findElement(By.xpath("(//input[@class='form-control'])[4]")).sendKeys("Sudheernani@1234");
+		//password
+		driver.findElement(By.xpath("(//input[@class='form-control'])[4]")).sendKeys("Sudheernani@12345");
 		Thread.sleep(3000);
-		
-		driver.findElement(By.xpath("(//input[@class='form-control'])[5]")).sendKeys("Sudheernani@1234");
+		//Confirm password
+		driver.findElement(By.xpath("(//input[@class='form-control'])[5]")).sendKeys("Sudheernani@12345");
 		Thread.sleep(3000);
 		
 		Scanner s = new Scanner(System.in);
